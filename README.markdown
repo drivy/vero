@@ -36,11 +36,10 @@ You will be able to find your API key and secret by logging into Vero
 ([sign up](http://getvero.com) if you haven't already) and clicking the
 'Your Account' link at the top of the page then select 'API Keys'.
 
-By default, events are sent asynchronously using a background thread.
+Events are no longer sent asynchronously using a background thread.
 We recommend that you select one of the supported queue-based alternatives:
 
-    config.async = :none            # Synchronously
-    config.async = :thread          # Background thread (default)
+    config.async = :none            # Synchronously (default)
     config.async = :delayed_job     # DelayedJob
     config.async = :sidekiq         # Sidekiq
     config.async = :resque          # Resque (recommended)

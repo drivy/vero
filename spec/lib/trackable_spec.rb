@@ -200,17 +200,6 @@ describe Vero::Trackable do
         expect(@user.with_vero_context.update_user_tags!).to eq(200)
       end
 
-      if RUBY_VERSION =~ /1\.9\./
-        it "should send using another thread when async is set to true" do
-          context = Vero::Context.new(Vero::App.default_context)
-          context.subject = @user
-          context.config.async = true
-
-          allow(@user).to receive(:with_vero_context).and_return(context)
-
-          expect(@user.with_vero_context.update_user_tags!).to be_nil
-        end
-      end
     end
 
     describe :unsubscribe! do

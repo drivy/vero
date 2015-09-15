@@ -40,7 +40,6 @@ module Vero
     autoload :Resque,             'vero/senders/resque'
     autoload :Sidekiq,            'vero/senders/sidekiq'
     autoload :Invalid,            'vero/senders/invalid'
-    autoload :Thread,             'vero/senders/thread'
   end
 
   module Utility
