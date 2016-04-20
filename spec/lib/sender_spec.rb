@@ -13,12 +13,11 @@ describe Vero::Sender do
         stub_const('RUBY_VERSION', '1.9.3')
       end
 
-      it "should have a default set of senders (true, false, none, thread)" do
+      it "should have a default set of senders (true, false, none)" do
         expect(subject.senders).to eq({
-          true          => Vero::Senders::Thread,
+          true          => Vero::Senders::Base,
           false         => Vero::Senders::Base,
           :none         => Vero::Senders::Base,
-          :thread       => Vero::Senders::Thread,
         })
       end
     end
